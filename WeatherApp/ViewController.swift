@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
     var cityName: String = "Barcelona"
     var forecastData: [ForecastData] = []
     
@@ -19,6 +20,18 @@ class ViewController: UIViewController {
         super.viewDidLoad()
        
     }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "weatherCell", for: indexPath) as! CustomTableViewCell
+        
+        return cell
+    }
+    
     /**
     Helpers
      */

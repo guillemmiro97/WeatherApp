@@ -15,6 +15,7 @@
 		12AE20B42912EBDA004D2BE8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AE20B12912EBDA004D2BE8 /* ViewController.swift */; };
 		12AE20B52912EBDA004D2BE8 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AE20B22912EBDA004D2BE8 /* WeatherData.swift */; };
 		12AE20B62912EBDA004D2BE8 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AE20B32912EBDA004D2BE8 /* APIManager.swift */; };
+		9A3EE7B92922B2AC0098EF2B /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3EE7B82922B2AC0098EF2B /* CustomTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		12AE20B12912EBDA004D2BE8 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		12AE20B22912EBDA004D2BE8 /* WeatherData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		12AE20B32912EBDA004D2BE8 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		9A3EE7B82922B2AC0098EF2B /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				12AE20A02912EB44004D2BE8 /* Assets.xcassets */,
 				12AE20A22912EB44004D2BE8 /* LaunchScreen.storyboard */,
 				12AE20A52912EB44004D2BE8 /* Info.plist */,
+				9A3EE7B82922B2AC0098EF2B /* CustomTableViewCell.swift */,
 			);
 			path = WeatherApp;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A3EE7B92922B2AC0098EF2B /* CustomTableViewCell.swift in Sources */,
 				12AE20B42912EBDA004D2BE8 /* ViewController.swift in Sources */,
 				12AE20982912EB43004D2BE8 /* AppDelegate.swift in Sources */,
 				12AE20B62912EBDA004D2BE8 /* APIManager.swift in Sources */,
