@@ -28,7 +28,7 @@ class APIManager {
         let dataTask = session.dataTask( with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
             
             if (error != nil) {
-                print(error)
+                print(error!)
             } else {
                 let httpResponse = response as? HTTPURLResponse
                 
@@ -48,8 +48,8 @@ class APIManager {
                             tempMax: String(maindata["temp_max"]!),
                             tempMin: String(maindata["temp_min"]!)
                         )
-
                         
+                        callback(wd).self
                     }
                 }
             }

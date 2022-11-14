@@ -48,8 +48,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func setupView() {
         APIManager.shared.requestWeatherForCity(cityName, "es") { ( response: WeatherData) in
             DispatchQueue.main.async {
-                print("In api manager")
+                
+                self.labelTempMax.text = response.tempMax
+                self.labelTempMinima.text = response.tempMin
+                
+                self.labelCiudad.text = self.cityName
+                
             }
+            
         }
         
         APIManager.shared.requestForecastForCity(cityName, "es") { data in
