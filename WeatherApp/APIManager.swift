@@ -36,9 +36,19 @@ class APIManager {
                     if let jsonString = String(data: data, encoding: .utf8) {
                         let data = self.convertToDictionary(text: jsonString)
                         
-                         var maindata = data!["main"] as! Dictionary<String,Double>
-                        
-                        print(maindata["temp_max"]!)
+                        let maindata = data!["main"] as! Dictionary<String,Double>
+                        let weather = data!["weather"] as! Dictionary<String,[Dictionary<String,Any>]>
+                        print(data)
+                        print(weather)
+//                        let wd = WeatherData(
+//                            main: weather["main"] as! String,
+//                            description: weather["description"] as! String,
+//                            temp: String(maindata["temp"]!),
+//                            tempMax: String(maindata["temp_max"]!),
+//                            tempMin: String(maindata["temp_min"]!)
+//                        )
+//
+//                        print(wd)
                     }
                 }
             }
