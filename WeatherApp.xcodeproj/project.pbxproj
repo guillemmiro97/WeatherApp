@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09EA91582922C8DA00908612 /* CitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EA91572922C8DA00908612 /* CitiesTableViewController.swift */; };
 		12AE20982912EB43004D2BE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AE20972912EB43004D2BE8 /* AppDelegate.swift */; };
 		12AE209A2912EB43004D2BE8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AE20992912EB43004D2BE8 /* SceneDelegate.swift */; };
 		12AE209F2912EB43004D2BE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12AE209D2912EB43004D2BE8 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		09EA91572922C8DA00908612 /* CitiesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesTableViewController.swift; sourceTree = "<group>"; };
 		12AE20942912EB43004D2BE8 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12AE20972912EB43004D2BE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12AE20992912EB43004D2BE8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				12AE20A22912EB44004D2BE8 /* LaunchScreen.storyboard */,
 				12AE20A52912EB44004D2BE8 /* Info.plist */,
 				9A3EE7B82922B2AC0098EF2B /* CustomTableViewCell.swift */,
+				09EA91572922C8DA00908612 /* CitiesTableViewController.swift */,
 			);
 			path = WeatherApp;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 				12AE20B42912EBDA004D2BE8 /* ViewController.swift in Sources */,
 				12AE20982912EB43004D2BE8 /* AppDelegate.swift in Sources */,
 				12AE20B62912EBDA004D2BE8 /* APIManager.swift in Sources */,
+				09EA91582922C8DA00908612 /* CitiesTableViewController.swift in Sources */,
 				12AE20B52912EBDA004D2BE8 /* WeatherData.swift in Sources */,
 				12AE209A2912EB43004D2BE8 /* SceneDelegate.swift in Sources */,
 			);

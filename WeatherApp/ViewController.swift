@@ -28,6 +28,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableForecast.dataSource = self
         tableForecast.delegate = self
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         setupView()
     }
     
@@ -63,6 +67,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 /**
                     Update Table View Data
                  */
+            }
+        }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetailCities"{
+            let citiesDestVC = segue.destination as! CitiesTableViewController
+            
+            citiesDestVC.nameCityCallback = { nameOfCity in
+                self.labelCiudad.text = nameOfCity
+                self.cityName = nameOfCity
+                self.setupView()
             }
         }
     }
