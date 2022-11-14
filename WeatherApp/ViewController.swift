@@ -13,12 +13,22 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var cityName: String = "Barcelona"
     var forecastData: [ForecastData] = []
     
+    
+    @IBOutlet var labelCiudad: UILabel!
+    @IBOutlet var labelTempMax: UILabel!
+    @IBOutlet var labelTempMinima: UILabel!
+    @IBOutlet var tableForecast: UITableView!
+    
     /**
     View lifecycle methods
      */
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
+        tableForecast.dataSource = self
+        tableForecast.delegate = self
+        
+        setupView()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -38,9 +48,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func setupView() {
         APIManager.shared.requestWeatherForCity(cityName, "es") { ( response: WeatherData) in
             DispatchQueue.main.async {
-                /**
-                    Update Main Weather Data
-                 */
+                print("In api manager")
             }
         }
         

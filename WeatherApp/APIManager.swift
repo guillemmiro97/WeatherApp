@@ -35,9 +35,10 @@ class APIManager {
                 if let data = data {
                     if let jsonString = String(data: data, encoding: .utf8) {
                         let data = self.convertToDictionary(text: jsonString)
-                        /**
-                            TODO: Complete
-                         */
+                        
+                         var maindata = data!["main"] as! Dictionary<String,Double>
+                        
+                        print(maindata["temp_max"]!)
                     }
                 }
             }

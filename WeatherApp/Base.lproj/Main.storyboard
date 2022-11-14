@@ -92,6 +92,12 @@
                     <navigationItem key="navigationItem" id="5Ho-6z-suS">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="7az-Y2-HDH"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="labelCiudad" destination="riF-1V-cJm" id="y9v-UB-lV5"/>
+                        <outlet property="labelTempMax" destination="naq-B5-fEQ" id="aop-Nw-2hT"/>
+                        <outlet property="labelTempMinima" destination="WAd-mZ-8qA" id="Qe5-Iq-Q1X"/>
+                        <outlet property="tableForecast" destination="is1-r3-qj7" id="ASm-eb-XTb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
