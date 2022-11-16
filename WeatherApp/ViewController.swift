@@ -15,9 +15,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     
     @IBOutlet var labelCiudad: UILabel!
+    @IBOutlet var labelTemp: UILabel!
     @IBOutlet var labelTempMax: UILabel!
     @IBOutlet var labelTempMinima: UILabel!
     @IBOutlet var tableForecast: UITableView!
+    @IBOutlet var weatherImage: UIImageView!
     
     /**
     View lifecycle methods
@@ -53,20 +55,36 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         APIManager.shared.requestWeatherForCity(cityName, "es") { ( response: WeatherData) in
             DispatchQueue.main.async {
                 
+                self.labelTemp.text = response.temp
                 self.labelTempMax.text = response.tempMax
                 self.labelTempMinima.text = response.tempMin
                 
                 self.labelCiudad.text = self.cityName
                 
+                switch response.main {
+                case "Rain":
+                    self.weatherImage.image = UIImage(systemName: "cloud")
+                    break;
+                case "Clouds":
+                    self.weatherImage.image = UIImage(systemName: "cloud.rain")
+                    break;
+                case "Clear":
+                    self.weatherImage.image = UIImage(systemName: "sun.min")
+                    break;
+                default:
+                    self.weatherImage.image = UIImage(systemName: "cloud")
+                    break;
+                }
+                
             }
             
         }
         
-        APIManager.shared.requestForecastForCity(cityName, "es") { data in
+        APIManager.shared.requestForecastForCity(cityName, "es") { (response: [ForecastData]) in
             DispatchQueue.main.async {
-                /**
-                    Update Table View Data
-                 */
+                for item in response {
+                    print(item.date! + " " + item.weatherDescription! )
+                }
             }
         }
     }

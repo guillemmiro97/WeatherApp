@@ -18,20 +18,20 @@ class WeatherData {
     init(main: String? = nil, description: String? = nil, temp: String? = nil, tempMax: String? = nil, tempMin: String? = nil) {
         self.main = main
         self.description = description
-        self.temp = temp
-        self.tempMax = tempMax
-        self.tempMin = tempMin
+        self.temp = temp! + " °C"
+        self.tempMax = tempMax! + " °C"
+        self.tempMin = tempMin! + " °C"
     }
 }
 
 class ForecastData {
-    var date: Date?
+    var date: String?
     var weatherDescription: String?
-    var temp: String?
-    var tempMax: String?
-    var tempMin: String?
+    var temp: Double?
+    var tempMax: Double?
+    var tempMin: Double?
     
-    init(date: Date? = nil, weatherDescription: String? = nil, temp: String? = nil, tempMax: String? = nil, tempMin: String? = nil) {
+    init(date: String? = nil, weatherDescription: String? = nil, temp: Double? = nil, tempMax: Double? = nil, tempMin: Double? = nil) {
         self.date = date
         self.weatherDescription = weatherDescription
         self.temp = temp

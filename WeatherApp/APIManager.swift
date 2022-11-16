@@ -73,9 +73,26 @@ class APIManager {
                 if let data = data {
                     if let jsonString = String(data: data, encoding: .utf8) {
                         let data = self.convertToDictionary(text: jsonString)
-                        /**
-                            TODO: Complete
-                         */
+                        
+                        let list = data!["list"] as! Array<Dictionary<String, Any>>
+                        
+                        var weathers = [ForecastData]()
+                        
+                        for weather in list {
+                            let maindata = weather["main"] as! Dictionary<String,Double>
+                            let description = weather["weather"] as! Array<Dictionary<String, Any>>
+
+                            let forecast = ForecastData(
+                                date: weather["dt_txt"]! as! String,
+                                weatherDescription: description.first!["description"] as! String,
+                                temp: maindata["temp"],
+                                tempMax: maindata["temp_max"],
+                                tempMin: maindata["temp_min"])
+                            
+                            weathers.append(forecast)
+                        }
+                        
+                        callback(weathers).self
                     }
                 }
             }
@@ -96,5 +113,4 @@ class APIManager {
         }
         return nil
     }
-    
 }
