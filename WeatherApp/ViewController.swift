@@ -49,16 +49,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         //
         //intentar mostrar solo la hora, ver como aplicamos formato a la fecha
         //
-        var date = forecastData[indexPath.row].date
-        date = String(date!.suffix(8))
+        guard let  date = forecastData[indexPath.row].date  else { return cell }
+        let dateString = String(date.suffix(8).prefix(5))
         
         //espacio en blanco por la mierda de que no se ve el resto.
-        date = ""
+//        date = ""
         
-        cell.lblHour.text = date
-        cell.forecastTempMin.text = forecastData[indexPath.row].tempMin!
-        cell.forecastTempMax.text = forecastData[indexPath.row].tempMax!
-        cell.forecastImage.image = getImage(text: forecastData[indexPath.row].weatherDescription!)
+        cell.lblHour.text = dateString
+        cell.forecastTempMin.text = forecastData[indexPath.row].tempMin
+        cell.forecastTempMax.text = forecastData[indexPath.row].tempMax
+        cell.forecastImage.image = getImage(text: forecastData[indexPath.row].weatherDescription)
+        
         
         return cell
     }
@@ -106,12 +107,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
-    func getImage(text: String) -> UIImage {
+    func getImage(text: String?) -> UIImage {
         switch text {
         case "Rain":
-            return UIImage(systemName: "cloud")!
-        case "Clouds":
             return UIImage(systemName: "cloud.rain")!
+        case "Clouds":
+            return UIImage(systemName: "cloud")!
         case "Clear":
             return UIImage(systemName: "sun.min")!
         default:
