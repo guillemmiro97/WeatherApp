@@ -45,9 +45,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "weatherCell", for: indexPath) as! CustomTableViewCell
-                
+        
+        //
+        //intentar mostrar solo la hora, ver como aplicamos formato a la fecha
+        //
         var date = forecastData[indexPath.row].date
         date = String(date!.suffix(8))
+        
+        //espacio en blanco por la mierda de que no se ve el resto.
+        date = ""
         
         cell.lblHour.text = date
         cell.forecastTempMin.text = forecastData[indexPath.row].tempMin!

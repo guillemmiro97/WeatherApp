@@ -84,7 +84,7 @@ class APIManager {
 
                             let forecast = ForecastData(
                                 date: weather["dt_txt"]! as! String,
-                                weatherDescription: description.first!["description"] as! String,
+                                weatherDescription: description.first!["main"] as! String,
                                 temp: String(maindata["temp"]!),
                                 tempMax: String(maindata["temp_max"]!),
                                 tempMin: String(maindata["temp_min"]!))
