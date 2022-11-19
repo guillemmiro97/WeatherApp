@@ -64,21 +64,58 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="weatherCell" id="jfU-p9-Z4H" customClass="CustomTableViewCell" customModule="WeatherApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="50" width="393" height="21"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jfU-p9-Z4H" id="jbO-e3-FqD">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jfU-p9-Z4H" id="jbO-e3-FqD" customClass="CustomTableViewCell" customModule="WeatherApp" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="21"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oq9-L2-iVQ">
-                                                    <rect key="frame" x="20" y="11" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oq9-L2-iVQ">
+                                                    <rect key="frame" x="63" y="0.0" width="41.333333333333343" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud.bolt.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="tgi-v9-Cn8">
+                                                    <rect key="frame" x="0.0" y="-0.3333333333333357" width="51" height="22.666666666666668"/>
+                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="51" id="4F2-OD-hW7"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8BI-lW-c5l">
+                                                    <rect key="frame" x="116.33333333333331" y="0.0" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D8O-WB-A6s">
+                                                    <rect key="frame" x="170.33333333333334" y="0.0" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="tgi-v9-Cn8" firstAttribute="leading" secondItem="jbO-e3-FqD" secondAttribute="leading" id="3Zu-SL-YXp"/>
+                                                <constraint firstItem="8BI-lW-c5l" firstAttribute="leading" secondItem="Oq9-L2-iVQ" secondAttribute="trailing" constant="12" id="BMf-NH-knd"/>
+                                                <constraint firstAttribute="bottom" secondItem="Oq9-L2-iVQ" secondAttribute="bottom" id="Fvl-bQ-HiR"/>
+                                                <constraint firstItem="Oq9-L2-iVQ" firstAttribute="top" secondItem="jbO-e3-FqD" secondAttribute="top" id="Kmz-Qz-K3n"/>
+                                                <constraint firstAttribute="bottom" secondItem="8BI-lW-c5l" secondAttribute="bottom" id="QYz-K2-1Pq"/>
+                                                <constraint firstItem="D8O-WB-A6s" firstAttribute="leading" secondItem="8BI-lW-c5l" secondAttribute="trailing" constant="12" id="cTh-tU-WaJ"/>
+                                                <constraint firstAttribute="bottom" secondItem="D8O-WB-A6s" secondAttribute="bottom" id="ivn-j8-bDb"/>
+                                                <constraint firstItem="tgi-v9-Cn8" firstAttribute="centerY" secondItem="jbO-e3-FqD" secondAttribute="centerY" id="mHh-of-SI8"/>
+                                                <constraint firstAttribute="bottom" secondItem="tgi-v9-Cn8" secondAttribute="bottom" id="okv-Hu-Day"/>
+                                                <constraint firstItem="8BI-lW-c5l" firstAttribute="top" secondItem="jbO-e3-FqD" secondAttribute="top" id="onK-J8-kFN"/>
+                                                <constraint firstItem="D8O-WB-A6s" firstAttribute="top" secondItem="jbO-e3-FqD" secondAttribute="top" id="zXG-b7-Hg2"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="forecastImage" destination="tgi-v9-Cn8" id="Lvg-1m-BdV"/>
+                                            <outlet property="forecastTempMax" destination="D8O-WB-A6s" id="huw-kZ-jua"/>
+                                            <outlet property="forecastTempMin" destination="8BI-lW-c5l" id="Ob5-w2-ACK"/>
+                                            <outlet property="lblHour" destination="Oq9-L2-iVQ" id="KVC-FW-tyg"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -187,6 +224,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cloud.bolt.fill" catalog="system" width="122" height="128"/>
         <image name="questionmark.app" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

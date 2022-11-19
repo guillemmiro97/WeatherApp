@@ -9,6 +9,11 @@ import UIKit
 
 class CustomTableViewCell: UITableViewCell {
 
+    @IBOutlet var lblHour: UILabel!
+    @IBOutlet var forecastImage: UIImageView!
+    @IBOutlet var forecastTempMin: UILabel!
+    @IBOutlet var forecastTempMax: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

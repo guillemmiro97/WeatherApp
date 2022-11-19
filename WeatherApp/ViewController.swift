@@ -21,6 +21,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet var tableForecast: UITableView!
     @IBOutlet var weatherImage: UIImageView!
     
+    
     /**
     View lifecycle methods
      */
@@ -38,12 +39,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return forecastData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "weatherCell", for: indexPath) as! CustomTableViewCell
+                
+        var date = forecastData[indexPath.row].date
+        date = String(date!.suffix(8))
+        
+        cell.lblHour.text = date
+        cell.forecastTempMin.text = forecastData[indexPath.row].tempMin!
+        cell.forecastTempMax.text = forecastData[indexPath.row].tempMax!
+        cell.forecastImage.image = getImage(text: forecastData[indexPath.row].weatherDescription!)
         
         return cell
     }
@@ -61,20 +70,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 
                 self.labelCiudad.text = self.cityName
                 
-                switch response.main {
-                case "Rain":
-                    self.weatherImage.image = UIImage(systemName: "cloud")
-                    break;
-                case "Clouds":
-                    self.weatherImage.image = UIImage(systemName: "cloud.rain")
-                    break;
-                case "Clear":
-                    self.weatherImage.image = UIImage(systemName: "sun.min")
-                    break;
-                default:
-                    self.weatherImage.image = UIImage(systemName: "cloud")
-                    break;
-                }
+                self.weatherImage.image = self.getImage(text: response.main!)
                 
             }
             
@@ -82,6 +78,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         APIManager.shared.requestForecastForCity(cityName, "es") { (response: [ForecastData]) in
             DispatchQueue.main.async {
+                
+                self.forecastData = response
+                self.tableForecast.reloadData()
+                
                 for item in response {
                     print(item.date! + " " + item.weatherDescription! )
                 }
@@ -97,6 +97,19 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 self.cityName = nameOfCity
                 self.setupView()
             }
+        }
+    }
+    
+    func getImage(text: String) -> UIImage {
+        switch text {
+        case "Rain":
+            return UIImage(systemName: "cloud")!
+        case "Clouds":
+            return UIImage(systemName: "cloud.rain")!
+        case "Clear":
+            return UIImage(systemName: "sun.min")!
+        default:
+            return UIImage(systemName: "cloud")!
         }
     }
 }

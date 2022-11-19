@@ -27,11 +27,11 @@ class WeatherData {
 class ForecastData {
     var date: String?
     var weatherDescription: String?
-    var temp: Double?
-    var tempMax: Double?
-    var tempMin: Double?
+    var temp: String?
+    var tempMax: String?
+    var tempMin: String?
     
-    init(date: String? = nil, weatherDescription: String? = nil, temp: Double? = nil, tempMax: Double? = nil, tempMin: Double? = nil) {
+    init(date: String? = nil, weatherDescription: String? = nil, temp: String? = nil, tempMax: String? = nil, tempMin: String? = nil) {
         self.date = date
         self.weatherDescription = weatherDescription
         self.temp = temp

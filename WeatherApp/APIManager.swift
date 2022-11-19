@@ -85,9 +85,9 @@ class APIManager {
                             let forecast = ForecastData(
                                 date: weather["dt_txt"]! as! String,
                                 weatherDescription: description.first!["description"] as! String,
-                                temp: maindata["temp"],
-                                tempMax: maindata["temp_max"],
-                                tempMin: maindata["temp_min"])
+                                temp: String(maindata["temp"]!),
+                                tempMax: String(maindata["temp_max"]!),
+                                tempMin: String(maindata["temp_min"]!))
                             
                             weathers.append(forecast)
                         }
